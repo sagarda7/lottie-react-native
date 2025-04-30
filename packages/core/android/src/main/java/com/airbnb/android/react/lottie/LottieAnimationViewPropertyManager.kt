@@ -108,8 +108,8 @@ class LottieAnimationViewPropertyManager(view: LottieAnimationView) {
                 val textDelegate = TextDelegate(view)
                 for (i in 0 until it.size()) {
                     val current = it.getMap(i) ?: continue
-                    val searchText = current.getString("find")
-                    val replacementText = current.getString("replace")
+                    val searchText = current?.getString("find")
+                    val replacementText = current?.getString("replace")
                     textDelegate.setText(searchText, replacementText)
                 }
                 view.setTextDelegate(textDelegate)
